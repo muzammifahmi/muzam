@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { message } = req.body;
-        const apiKey = "AIzaSyDOt2KK4-IVcFhFQk33WweKv-K4nN_Nytg"; // Ganti dengan kunci API yang valid
+        const apiKey = "AIzaSyBR7nikmPliqLQ62jAIz94FwjkPNTsHf88"; // Ganti dengan kunci API yang valid
 
         try {
             // Mengirim permintaan ke API Google Generative AI
