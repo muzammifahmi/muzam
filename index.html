@@ -93,53 +93,68 @@
     </footer>
 
 <script>
-      AOS.init();
+  AOS.init();
 
-    function toggleChat() {
-        var chat = document.getElementById("chatContainer");
-        var chatButton = document.getElementById("chatButton");
-        if (chat.style.display === "none" || chat.style.display === "") {
-            chat.style.display = "block";
-            chatButton.style.display = "none";
-        } else {
-            chat.style.display = "none";
-            chatButton.style.display = "block";
-        }
-    }
+  // Fungsi untuk toggle chat window
+  function toggleChat() {
+      var chat = document.getElementById("chatContainer");
+      var chatButton = document.getElementById("chatButton");
+      if (chat.style.display === "none" || chat.style.display === "") {
+          chat.style.display = "block";
+          chatButton.style.display = "none";
+      } else {
+          chat.style.display = "none";
+          chatButton.style.display = "block";
+      }
+  }
 
-    async function sendMessage() {
-        var inputField = document.getElementById("chatInput");
-        var message = inputField.value;
-        if (!message) return;
+  // Fungsi untuk mengirim pesan
+  async function sendMessage() {
+      var inputField = document.getElementById("chatInput");
+      var message = inputField.value.trim(); // Menghapus spasi di awal/akhir
+      if (!message) {
+          // Menambahkan pesan error jika input kosong
+          var chatBody = document.getElementById("chatBody");
+          chatBody.innerHTML += `<div><b>AI:</b> Silakan masukkan pesan.</div>`;
+          return;
+      }
 
-        var chatBody = document.getElementById("chatBody");
-        chatBody.innerHTML += `<div><b>You:</b> ${message}</div>`;
-        inputField.value = "";
+      var chatBody = document.getElementById("chatBody");
+      chatBody.innerHTML += `<div><b>You:</b> ${message}</div>`;
+      inputField.value = ""; // Reset input field
 
-        try {
-            // Tambahkan instruksi agar jawaban dalam bahasa Indonesia
-            const prompt = `Tolong jawab dalam bahasa Indonesia: ${message}`;
+      try {
+          // Tambahkan instruksi agar jawaban dalam bahasa Indonesia
+          const prompt = `Tolong jawab dalam bahasa Indonesia: ${message}`;
 
-            const response = await fetch('/api/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: prompt })
-            });
+          // Mengirimkan request ke API /api/chat
+          const response = await fetch('/api/chat', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ message: prompt })
+          });
 
-            const data = await response.json();
+          // Memeriksa jika API merespons dengan status selain 200
+          if (!response.ok) {
+              throw new Error('Terjadi kesalahan pada server API.');
+          }
 
-            // Debugging - Cek respons API
-            console.log(data);
+          const data = await response.json();
 
-            const reply = data?.reply || "Maaf, saya tidak mengerti itu.";
-            chatBody.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
-        } catch (error) {
-            console.error("Error:", error);
-            chatBody.innerHTML += `<div><b>AI:</b> Terjadi kesalahan!</div>`;
-        }
-    }
+          // Debugging - Cek respons API
+          console.log('Data API:', data);
+
+          // Memeriksa jika balasan tersedia dalam respons API
+          const reply = data?.reply || "Maaf, saya tidak mengerti itu.";
+          chatBody.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
+      } catch (error) {
+          console.error("Error:", error);
+          chatBody.innerHTML += `<div><b>AI:</b> Terjadi kesalahan! Coba lagi nanti.</div>`;
+      }
+  }
 </script>
+
 </body>
 </html>
