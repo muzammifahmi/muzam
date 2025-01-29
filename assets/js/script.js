@@ -38,7 +38,7 @@ async function sendMessage() {
 document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed("#typed-text", {
         strings: [
-            "Achmad Muzammi Fahmi", 
+            "I'm Muzammi Fahmi", 
             "I'm Junior Programming", 
             "I'm Student in UM"
         ],
