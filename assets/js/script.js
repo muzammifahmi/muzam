@@ -34,3 +34,18 @@ async function sendMessage() {
     const reply = data?.candidates?.[0]?.content || "Sorry, I didn't understand that.";
     chatBody.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
 }
+
+const text = document.querySelector(".name_text");
+const textLoad = () => {
+    setTimeout(() => {
+        text.textContent = "Achmad Muzammi Fahmi";
+    }, 0);
+    setTimeout(() => {
+        text.textContent = "I'm Junior Programming";
+    }, 4000);
+    setTimeout(() => {
+        text.textContent = "I'm Student in UM";
+    }, 8000)
+}
+textLoad();
+setInterval(textLoad, 12000);
