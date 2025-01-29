@@ -1,5 +1,5 @@
 body {
-    background: url('/assets/photo/background.jpg') no-repeat center center fixed;
+    background: url('/assets/photo/background1.jpg') no-repeat center center fixed;
     background-size: cover;
     padding-top: 80px;
 }
@@ -20,14 +20,7 @@ body {
     border-radius: 10px;
 }
 
-.parallax {
-    background-image: url('/assets/photo/background.jpg');
-    height: 300px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 
 /* Chatbox */
 .chat-container {
@@ -107,3 +100,55 @@ body {
     color: #555;
 }
 
+/* animasi gelombang*/
+.gradient-box {
+    position: relative;
+    background-color: #ffffff; /* Kotak tetap putih */
+    overflow: hidden;
+    height: 100%;
+}
+
+.profile-section {
+    position: relative;
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    bottom: -100px; /* Posisi gelombang di bawah konten */
+    left: 0;
+    width: 200%;
+    height: 200px;
+    background: linear-gradient(45deg, #243350, #4e6896, #3967ff); /* Gradasi biru untuk gelombang */
+    border-radius: 50%;
+    animation: wave-animation 6s linear infinite;
+    z-index: 0;
+}
+
+/* Animasi untuk gelombang */
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(40px); /* Gelombang naik */
+    }
+    100% {
+        transform: translateX(0) translateY(0); /* Gelombang turun */
+    }
+}
+
+.gradient-box .wave:nth-child(1) {
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.gradient-box .wave:nth-child(2) {
+    animation-duration: 10s;
+    animation-delay: -3s;
+}
+
+.gradient-box .wave:nth-child(3) {
+    animation-duration: 12s;
+    animation-delay: -5s;
+}
