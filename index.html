@@ -11,28 +11,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
 </head>
-<body>
+<body onload="updateTime()">
     <nav class="navbar navbar-expand-lg fixed-top navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">Achmad Muzammi Fahmi</a>
-
+                <span id="current-time" class="time-display"></span>
         </div>
     </nav>
 
     <div class="container py-4 mb-5">
-        <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="p-5 mb-4 bg-light rounded-3 ">
             <div class="container-fluid py-5">
                 <div class="row profile-section">
                     <!-- Foto -->
                     <div class="col-md-4 text-center text-md-start">
-                        <img src="/assets/photo/IMG-20230426-WA0001.jpg" class="profile-image img-fluid" alt="Profile Picture">
+                        <img src="/assets/photo/muzammi.jpg" class="profile-image img-fluid" alt="Profile Picture">
                     </div>
                     
                     <!-- Teks -->
                     <div class="col-md-8 text-center text-md-start">
                         <h1 class="display-5 fw-bold name_text">
-                            <span id="typed-text"></span><span class="cursor"></span>
+                            <span id="typed-text" style="color: rgb(35, 22, 219);"></span><span class="cursor"></span>
                         </h1>
                         <p class="fs-4">I am an undergraduate student majoring in Informatics and Computer Engineering Education. Passionate about technology, programming, and education, I strive to integrate innovative solutions into learning and teaching processes.</p>
                     </div>
@@ -42,14 +44,14 @@
 
         <!-- My Passion & About Me -->
         <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3" data-aos="fade-up">
                 <div class="h-100 p-5 text-white bg-dark rounded-3">
                     <h2>My Passion</h2>
                     <p>I am enthusiastic about developing educational technology, web development, and enhancing digital learning experiences.</p>
                     <a href="https://github.com/muzammifahmi"><button class="btn btn-outline-light" type="button">Explore My Work</button></a>
                 </div>
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3" data-aos="fade-up">
                 <div class="h-100 p-5 bg-light border rounded-3">
                     <h2>About Me</h2>
                     <p>As a student, I continuously seek new challenges and learning opportunities in the field of informatics and computer education. My goal is to bridge technology and education effectively.</p>
@@ -57,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6" data-aos="fade-up">
                 <div class="h-100 p-5 bg-light border rounded-3 d-flex align-items-center">
                     <div class="w-50">
                         <h2>Gallery</h2>
@@ -70,12 +72,25 @@
                         <img src="assets/photo/books.jpg" class="img-fluid rounded-3" alt="Gallery Image">
                     </div>
                 </div>
-            </div>
-            
-
-
+            </div>    
         </div>
+
+        <div class=" motivational-quote bg-light rounded-3 p-4 mt-3" data-aos="fade-up">
+            <div class="quote-text">“إذا مات ابنُ آدمَ انقطع عملُه إلا من ثلاثٍ: صدقةٍ جاريةٍ، وعلمٍ ينتفعُ به، وولدٍ صالحٍ يدعو له”</div>
+            <div class="quote-author">- رواه مسلم</div>
+        </div>
+
+        <!-- <div class="p-1 bg-light rounded-3">
+            <div class="container-fluid p-0">
+                <div class=" motivational-quote">
+                    <div class="quote-text">“إذا مات ابنُ آدمَ انقطع عملُه إلا من ثلاثٍ: صدقةٍ جاريةٍ، وعلمٍ ينتفعُ به، وولدٍ صالحٍ يدعو له”</div>
+                    <div class="quote-author">- رواه مسلم</div>
+                </div>
+            </div>
+        </div> -->
     </div>
+
+
 
     <div class="parallax"></div>
 
@@ -99,6 +114,7 @@
         </div>
         <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2025 Achmad Muzammi Fahmi
+            
         </div>
     </footer>
 

@@ -67,7 +67,7 @@ body {
     padding: 5px;
 }
 
-
+/* style ketikan judul/nama */
 .cursor {
     font-weight: bold;
     color: #ff5722;
@@ -76,5 +76,34 @@ body {
 
 @keyframes blink {
     50% { opacity: 0; }
+}
+
+.time-display {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.motivational-quote {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    width: 100%;
+}
+
+.quote-text {
+    max-width: 600px; /* Sesuaikan dengan lebar judul utama */
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.quote-author {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #555;
 }
 
