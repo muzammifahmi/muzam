@@ -68,16 +68,13 @@ body {
 }
 
 
-.typing{
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-.cursor{
+.cursor {
     font-weight: bold;
     color: #ff5722;
     animation: blink 0.7s infinite;
 }
-@keyframes blink{
-    50%{opacity: 0;}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }
+

@@ -35,30 +35,17 @@ async function sendMessage() {
     chatBody.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
 }
 
-// const text = document.querySelector(".name_text");
-// const textLoad = () => {
-//     setTimeout(() => {
-//         text.textContent = "Achmad Muzammi Fahmi";
-//     }, 0);
-//     setTimeout(() => {
-//         text.textContent = "I'm Junior Programming";
-//     }, 4000);
-//     setTimeout(() => {
-//         text.textContent = "I'm Student in UM";
-//     }, 8000)
-// }
-// textLoad();
-// setInterval(textLoad, 12000);
-
-var typed = new Typed("#typed", {
-    string: [
-        "Achmad Muzammi Fahmi",
-        "I'm Junior Programming",
-        "I'm Student in UM",
-    ],
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 1000,
-    startDelay: 500,
-    loop: true
+document.addEventListener("DOMContentLoaded", function () {
+    var typed = new Typed("#typed-text", {
+        strings: [
+            "Achmad Muzammi Fahmi", 
+            "I'm Junior Programming", 
+            "I'm Student in UM"
+        ],
+        typeSpeed: 100, // Kecepatan mengetik (ms per karakter)
+        backSpeed: 50, // Kecepatan menghapus
+        backDelay: 1000, // Waktu jeda sebelum menghapus
+        startDelay: 500, // Waktu tunggu sebelum mulai mengetik
+        loop: true // Animasi berulang
+    });
 });
