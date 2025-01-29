@@ -66,3 +66,18 @@ body {
     flex: 1;
     padding: 5px;
 }
+
+
+.typing{
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+.cursor{
+    font-weight: bold;
+    color: #ff5722;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    50%{opacity: 0;}
+}

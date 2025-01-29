@@ -35,17 +35,30 @@ async function sendMessage() {
     chatBody.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
 }
 
-const text = document.querySelector(".name_text");
-const textLoad = () => {
-    setTimeout(() => {
-        text.textContent = "Achmad Muzammi Fahmi";
-    }, 0);
-    setTimeout(() => {
-        text.textContent = "I'm Junior Programming";
-    }, 4000);
-    setTimeout(() => {
-        text.textContent = "I'm Student in UM";
-    }, 8000)
-}
-textLoad();
-setInterval(textLoad, 12000);
+// const text = document.querySelector(".name_text");
+// const textLoad = () => {
+//     setTimeout(() => {
+//         text.textContent = "Achmad Muzammi Fahmi";
+//     }, 0);
+//     setTimeout(() => {
+//         text.textContent = "I'm Junior Programming";
+//     }, 4000);
+//     setTimeout(() => {
+//         text.textContent = "I'm Student in UM";
+//     }, 8000)
+// }
+// textLoad();
+// setInterval(textLoad, 12000);
+
+var typed = new Typed("#typed", {
+    string: [
+        "Achmad Muzammi Fahmi",
+        "I'm Junior Programming",
+        "I'm Student in UM",
+    ],
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 1000,
+    startDelay: 500,
+    loop: true
+});
