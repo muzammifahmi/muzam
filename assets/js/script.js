@@ -39,7 +39,7 @@ async function sendMessage() {
 document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed("#typed-text", {
         strings: [
-            "My name is Muzammi.", 
+            "My name is RICO FITRA.", 
             "I am a Junior Programmer.", 
             // "I am a student at the Malang State University (UM)."
         ],
