@@ -39,8 +39,8 @@ async function sendMessage() {
 document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed("#typed-text", {
         strings: [
-            "My name is RICO FITRA.", 
-            "I am a Junior Programmer.", 
+            "My name is Achmad Muzammi Fahmi.", 
+            "Welcome to my Website.", 
             // "I am a student at the Malang State University (UM)."
         ],
         typeSpeed: 100, // Kecepatan mengetik (ms per karakter)
