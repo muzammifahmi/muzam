@@ -1,154 +1,90 @@
 body {
-    background: url('/assets/photo/background1.jpg') no-repeat center center fixed;
-    background-size: cover;
-    padding-top: 80px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 60px; /* Adjust this value based on the navbar height */
+    background: linear-gradient(135deg, #1e90ff, #87cefa);
 }
 
 .navbar {
-    transition: background-color 0.3s;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-}
-
-.navbar.scrolled {
-    background-color: rgb(60, 48, 131) !important;
-}
-
-.profile-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-
-
-/* Chatbox */
-.chat-container {
     position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: none;
-}
-
-.chat-header {
-    background: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.chat-body {
-    height: 300px;
-    overflow-y: auto;
-    padding: 10px;
-}
-
-.chat-input {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-}
-
-.chat-input input {
-    flex: 1;
-    padding: 5px;
-}
-
-/* style ketikan judul/nama */
-.cursor {
-    font-weight: bold;
-    color: #ff5722;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
-}
-
-.time-display {
-    display: inline-block;
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-.motivational-quote {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #222;
-    width: 100%;
-}
-
-.quote-text {
-    max-width: 600px; /* Sesuaikan dengan lebar judul utama */
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center;
-    font-size: 1.8rem;
-}
-
-.quote-author {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: #555;
-}
-
-/* animasi gelombang*/
-.gradient-box {
-    position: relative;
-    background-color: #ffffff; /* Kotak tetap putih */
-    overflow: hidden;
-    height: 100%;
-}
-
-.profile-section {
-    position: relative;
-    z-index: 1;
-}
-
-.wave {
-    position: absolute;
-    bottom: -100px; /* Posisi gelombang di bawah konten */
+    top: 0;
     left: 0;
-    width: 200%;
-    height: 200px;
-    background: linear-gradient(45deg, #243350, #4e6896, #3967ff); /* Gradasi biru untuk gelombang */
-    border-radius: 50%;
-    animation: wave-animation 6s linear infinite;
-    z-index: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+button {
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Animasi untuk gelombang */
+button:hover {
+    transform: scale(1.05);
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Profile Image */
+.profile-image {
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards */
+.bg-light, .bg-dark {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-light:hover, .bg-dark:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Waves */
+.wave {
+    animation: wave-animation 6s infinite linear;
+}
+
 @keyframes wave-animation {
     0% {
-        transform: translateX(0) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(40px); /* Gelombang naik */
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(0) translateY(0); /* Gelombang turun */
+        transform: translateX(-100%);
     }
 }
 
-.gradient-box .wave:nth-child(1) {
-    animation-duration: 8s;
-    animation-delay: 0s;
+/* Social Icons */
+.btn-link {
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.gradient-box .wave:nth-child(2) {
-    animation-duration: 10s;
-    animation-delay: -3s;
+.btn-link:hover {
+    transform: scale(1.2);
+    color: #007bff !important;
 }
 
-.gradient-box .wave:nth-child(3) {
-    animation-duration: 12s;
-    animation-delay: -5s;
+/* Motivational Quote */
+.motivational-quote {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.motivational-quote:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Animations for AOS */
+[data-aos] {
+    transition: all 0.5s ease-in-out;
 }

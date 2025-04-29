@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed("#typed-text", {
         strings: [
-            "My name is Achmad Muzammi Fahmi.", 
+            "My name is Muzammi", 
             "Welcome to my Website.", 
             // "I am a student at the Malang State University (UM)."
         ],
